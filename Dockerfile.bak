@@ -1,0 +1,19 @@
+FROM romeoz/docker-apache-php:7.3
+
+WORKDIR /var/www/app
+
+RUN rm index.php
+
+COPY . /var/www/app
+
+RUN ls -la
+
+RUN composer install --no-scripts
+
+RUN php artisan key:generate
+
+RUN chmod -R 0777 bootstrap
+
+RUN chmod -R 0777 storage
+
+EXPOSE 80 443

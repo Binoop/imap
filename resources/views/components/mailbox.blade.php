@@ -53,15 +53,28 @@
 						<div class="table-responsive">
 							<table class="table" style="font-size:13px !important">
 
-
+								<thead>
+									<tr>
+											<th></th>
+											<th>From</th>
+											<th>Subject</th>
+											<th>Content </th>
+											<th>Date</th>
+									</tr>
+								</thead>
 								<tbody>
 
 									@if(!empty($mails) && $mails->count())
 					@foreach($mails as $key => $mail)
 					<tr>
 							<td class="action"><a class="mailDelete" data-id={{$mail->id}} href="#"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
-							<td class="name"><a href="#">{{$mail->from_email}}</a></td>
+							<td class="subject"><a href="#">{{$mail->from_email}}</a></td>
 							<td class="subject"><a href="#">{{$mail->subject}}</a></td>
+							<td class="time"><p style="width: 200px;overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;">{{$mail->body_content}}</p></td>
 							<td class="time">{{$mail->mail_received_at}}</td>
 				</tr>
 					@endforeach

@@ -26,3 +26,10 @@ docker run -d --name=whiterabbit -p 8080:80 whiterabbit
 docker run -d --name=whiterabbit -v=<path-to-your-app>:/var/www/app 8080:80 whiterabbit
 
 ```
+
+
+#### GENERAL ACTIVITES
+
+- Run Database Migration & Seeders
+- Copy contents of .env.sample to .env and update IMAP configuration, with the username and password.
+- Currently supports only one account

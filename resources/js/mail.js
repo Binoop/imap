@@ -39,7 +39,8 @@ $(document).ready(function(e){
   // Delete Email
   $('.mailDelete').click(function(e){
 
-    mailId = $(this).data('id');
+      mailId = $(this).data('id');
+      $(this).html("<i class='fa fa-circle-o-notch fa-spin'>");
 
     $.ajax({
       url:config.routes.deleteMail,

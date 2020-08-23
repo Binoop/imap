@@ -13,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $user = App\Models\User::all();
-    var_dump($user);
-});
+// Dashboard Page
+Route::get('/',"InboxController@index");
+
+// Activity Page
+Route::get('/activities',"ActivityController@index");
+
+// Sync Mail Feature
+Route::get('/syncMails',"MailController@syncMails");
+
+Route::post('/mail/delete',"MailController@deleteMail");
